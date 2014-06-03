@@ -5,7 +5,7 @@ $:.unshift lib unless $:.include?(lib)
 require 'httmultiparty/version'
 
 Gem::Specification.new do |s|
-  s.name        = "httmultiparty"
+  s.name        = "httmultiparty_sf"
   s.version     = HTTMultiParty::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Johannes Wagener"]

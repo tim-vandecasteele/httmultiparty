@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    httmultiparty (0.3.14)
+    httmultiparty_sf (0.3.14)
       httparty (>= 0.7.3)
       mimemagic
       multipart-post
@@ -11,7 +11,7 @@ GEM
   specs:
     diff-lcs (1.1.3)
     fakeweb (1.3.0)
-    httparty (0.12.0)
+    httparty (0.13.1)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
     json (1.8.1)
@@ -33,6 +33,6 @@ PLATFORMS
 
 DEPENDENCIES
   fakeweb
-  httmultiparty!
+  httmultiparty_sf!
   rake
   rspec
