@@ -24,12 +24,12 @@ module HTTMultiParty
   def self.query_string_normalizer(options = {})
     detect_mime_type = options.fetch(:detect_mime_type, false)
     Proc.new do |params|
-      HTTMultiParty.flatten_params(params).map do |(k,v)|
-        if file_present_in_params?(params)
+      if file_present_in_params?(params)
+        HTTMultiParty.flatten_params(params).map do |(k,v)|
           [k, v.respond_to?(:read) ? HTTMultiParty.file_to_upload_io(v, detect_mime_type) : v]
-        else
-          "#{k}=#{v}"
         end
+      else
+        HTTParty::Request::NON_RAILS_QUERY_STRING_NORMALIZER.call(params)
       end
     end
   end
